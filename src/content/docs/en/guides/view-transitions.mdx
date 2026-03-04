@@ -114,6 +114,8 @@ In the example below, the component's internal state of the count will not be re
 
 :::note[Known limitations]
 Not all state can be preserved in this way. The restart of CSS animations and the reload of iframes cannot be avoided during view transitions even when using `transition:persist`.
+
+WebGL/WebGL2 canvas context is preserved during persist swaps. In browsers that support [`moveBefore()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/moveBefore), all live element state (focus, animations, etc.) is atomically preserved.
 :::
 
 You can also [manually identify corresponding elements](#naming-a-transition) if the island/element is in a different component between the two pages.
